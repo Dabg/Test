@@ -3,22 +3,14 @@ os:
 sudo: required
 language: perl
 perl:
-  - "5.8"               # normal preinstalled perl
-  - "5.12"            # builds perl 5.12.2 from source (pre-built not available)
-  - "5.20"              # installs latest perl 5.20 (if not already available)
-matrix:
-  include:
-    - perl: 5.18
-      env: COVERAGE=1   # enables coverage+coveralls reporting
-  allow_failures:
-    - perl: blead       # ignore failures for blead perl
+  - "5.10"               # normal preinstalled perl
 before_install:
   - sudo apt-get -qq update
   - sudo apt-get install -y  libperl-dev libmagickcore-dev # to compile some module on travis
   - eval $(curl https://travis-perl.github.io/init) --auto
   - sudo add-apt-repository -y ppa:moti-p/cc
   - sudo apt-get update
-  - sudo apt-get -y --force-yes install libimage-magick-perl
+  - sudo apt-get -y --force-yes install libimage-magick-perl libnet-ssh2-perl
   # - wget http://www.imagemagick.org/download/ImageMagick.tar.gz
   # - tar xf ImageMagick.tar.gz
   # - cd ImageMagick*
