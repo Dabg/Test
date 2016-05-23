@@ -46,6 +46,11 @@ install:
 before_script:
   - coverage-setup
 script:
+  - export AUTOMATED_TESTING=1 RELEASE_TESTING=1 AUTHOR_TESTING=1
+  - export HARNESS_OPTIONS=c HARNESS_TIMER=1 HARNESS_VERBOSE=1
+  - cpanm -n Devel::Cover::Report::Coveralls
+  - dzil authordeps | cpanm -n
+  - dzil listdeps   | cpanm -n
   - prove -l -j$(test-jobs) $(test-files)   # parallel testing
 after_success:
   - coverage-report
