@@ -31,6 +31,13 @@ before_install:
 install:
   - cpanm --notest --installdeps .
 
+script:
+  - perl Makefile.PL          # or Build.PL if it exists
+  - make                      # or ./Build
+  - prove -l -s -j$(test-jobs) $(test-files)
+after_success:
+  - coverage-report
+
 matrix:
   allow_failures:
     - perl: blead       # ignore failures for blead perl
