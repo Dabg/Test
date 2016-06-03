@@ -1,4 +1,5 @@
 sudo: required
+
 language: perl
 perl:
   # - "5.22"
@@ -12,7 +13,6 @@ perl:
   #- "dev"              # installs latest developer release of perl (e.g. 5.21.8)
   #- "blead"            # builds perl from git
 
-sudo: false             # faster builds as long as you don't need sudo access
 
 before_install:
   - sudo apt-get -qq update
