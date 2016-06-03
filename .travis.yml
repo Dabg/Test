@@ -16,7 +16,7 @@ perl:
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y libgcrypt-dev openssl libssh2-1  libnet-ssh2-perl libdata-guid-perl libjson-any-perl perlmagick imagemagick
+  - sudo apt-get install -y libgcrypt-dev openssl libssh2-1  libnet-ssh2-perl  libjson-any-perl perlmagick imagemagick
   - git clone git://github.com/travis-perl/helpers ~/travis-perl-helpers
   - source ~/travis-perl-helpers/init --auto
 
