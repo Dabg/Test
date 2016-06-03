@@ -16,8 +16,14 @@ perl:
 
 before_install:
   - sudo apt-get -qq update
-  - sudo apt-get install -y libgcrypt-dev openssl libssh2-1 libssh2-1-dev libnet-ssh2-perl  libjson-any-perl perlmagick libmagickcore-dev
-
+  - sudo apt-get install -y libgcrypt-dev openssl libssh2-1 libssh2-1-dev libnet-ssh2-perl  libjson-any-perl  libperl-dev
+  - wget http://www.imagemagick.org/download/ImageMagick.tar.gz
+  - tar xf ImageMagick.tar.gz
+  - cd ImageMagick*
+  - ./configure --prefix=/usr --with-perl
+  - make
+  - sudo make install
+  - cd ..
   - git clone git://github.com/travis-perl/helpers ~/travis-perl-helpers
   - source ~/travis-perl-helpers/init --auto
 
