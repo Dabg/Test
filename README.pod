@@ -1,0 +1,34 @@
+=pod
+
+=encoding utf8
+
+=head1 NAME
+
+Test - Catalyst based application
+
+=head1 VERSION
+
+version 0.01
+
+=head1 SYNOPSIS
+
+    script/test_server.pl
+
+=head1 DESCRIPTION
+
+[enter your description here]
+
+=head1 SEE ALSO
+
+L<Test::Controller::Root>, L<Catalyst>
+
+=head1 AUTHOR
+
+dab,,,
+
+=head1 LICENSE
+
+This library is free software. You can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
