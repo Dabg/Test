@@ -18,6 +18,7 @@ env:
     - TARGET=imagemagick
 
 before_install:
+  - git submodule update --init
   - sudo apt-get -qq update
   - sudo apt-get install -y libgcrypt-dev openssl libssh2-1 libssh2-1-dev libnet-ssh2-perl  libjson-any-perl  libperl-dev
   # - wget http://www.imagemagick.org/download/ImageMagick.tar.gz
